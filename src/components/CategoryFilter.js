@@ -1,10 +1,17 @@
-import React from "react";
+import { Children } from "react";
 
-function CategoryFilter() {
+function CategoryFilter({ categories }) {
+
+  function handleSelect(e) {
+    const children = e.target.parentNode.children
+    for (let i=0; i<children.length; i++) {children[i].className = ""}
+    e.target.className = "selected"
+  }
+
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {/* render <button> elements for each category here */}
+      {categories.map(category => <button key={category} onClick={e => handleSelect(e)}>{category}</button>)}
     </div>
   );
 }
