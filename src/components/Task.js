@@ -5,7 +5,7 @@ function Task({ text, category }) {
     <div className="task">
       <div className="label">{category}</div>
       <div className="text">{text}</div>
-      <button onClick={e => e.target.parentNode.remove()} className="delete">X</button>
+      <button onClick={e=>e.target.parentNode.remove()}className="delete">X</button>
     </div>
   );
 }
